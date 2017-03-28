@@ -11,15 +11,15 @@ MiniTD
 
 ### Milestone 4 Notes
 Background: Parade of characters, dancing characters
-    Buttons shouldn't be over the characters
-    Toybox background?
+&nbsp;&nbsp;&nbsp;&nbsp;Buttons shouldn't be over the characters
+&nbsp;&nbsp;&nbsp;&nbsp;Toybox background?
 
 Buttons:
 Aesthetic or color scheme of the toys
-    Play
-    Settings
-    Credits
-    Quit
+&nbsp;&nbsp;&nbsp;&nbsp;Play
+&nbsp;&nbsp;&nbsp;&nbsp;Settings
+&nbsp;&nbsp;&nbsp;&nbsp;Credits
+&nbsp;&nbsp;&nbsp;&nbsp;Quit
 
 Environment:
 Toybox, with light (maybe lego or building blocks for walls)
@@ -31,7 +31,7 @@ Characters that walk up and announce things in text bubbles
 
 ### Game Notes
 Enemies:
-    Action Figures
-    Plushies
-    Robots
-    Green Soldier Men
+&nbsp;&nbsp;&nbsp;&nbsp;Action Figures
+&nbsp;&nbsp;&nbsp;&nbsp;Plushies
+&nbsp;&nbsp;&nbsp;&nbsp;Robots
+&nbsp;&nbsp;&nbsp;&nbsp;Green Soldier Men
