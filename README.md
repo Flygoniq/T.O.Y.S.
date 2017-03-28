@@ -15,11 +15,11 @@ Background: Parade of characters, dancing characters
 &nbsp;&nbsp;&nbsp;&nbsp;Toybox background?
 
 Buttons:
-Aesthetic or color scheme of the toys
-&nbsp;&nbsp;&nbsp;&nbsp;Play
-&nbsp;&nbsp;&nbsp;&nbsp;Settings
-&nbsp;&nbsp;&nbsp;&nbsp;Credits
-&nbsp;&nbsp;&nbsp;&nbsp;Quit
+Aesthetic or color scheme of the toys  
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Play  
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Settings  
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Credits  
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Quit  
 
 Environment:
 Toybox, with light (maybe lego or building blocks for walls)
@@ -31,7 +31,7 @@ Characters that walk up and announce things in text bubbles
 
 ### Game Notes
 Enemies:
-&nbsp;&nbsp;&nbsp;&nbsp;Action Figures
-&nbsp;&nbsp;&nbsp;&nbsp;Plushies
-&nbsp;&nbsp;&nbsp;&nbsp;Robots
-&nbsp;&nbsp;&nbsp;&nbsp;Green Soldier Men
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Action Figures  
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Plushies  
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Robots  
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Green Soldier Men  
