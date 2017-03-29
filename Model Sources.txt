@@ -1,0 +1,11 @@
+check clara.io, turbosquid.com
+
+Gundams: https://www.turbosquid.com/Search/Index.cfm?keyword=gundam&max_price=0&min_price=0
+
+Robots: https://clara.io/library?gameCheck=true&public=true&query=toy%20robot
+
+Teddy Bear: https://clara.io/view/3fea4e6d-a2d3-44ba-8473-96103dc0d085
+
+Army man: https://www.turbosquid.com/3d-models/free-lwo-model-toy-soldier/458342
+
+Storm Trooper: https://www.turbosquid.com/3d-models/star-wars-storm-trooper-3ds-free/545427
