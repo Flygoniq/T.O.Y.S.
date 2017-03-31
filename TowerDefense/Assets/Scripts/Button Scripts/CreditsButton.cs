@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreditsButton : MonoBehaviour {
 
+	public void MyFunction(){
+		SceneManager.LoadScene ("Credits");
+	}
 	// Use this for initialization
 	void Start () {
 		
