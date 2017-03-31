@@ -7,7 +7,7 @@ public class StartButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		EventSystem.current.SetSelectedGameObject(gameObject);
+//		EventSystem.current.SetSelectedGameObject(gameObject);
 	}
 	
 	// Update is called once per frame
