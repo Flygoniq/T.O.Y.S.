@@ -10,7 +10,7 @@ ii.
 1. UI Components
    1) finished with intuitive interaction. 
    2) finished background with animations of main characters alternate between idling, waving at player, and threatening each other.
-   3) a. finished with clear position. b. All the elements, like the title shown, were customized with our collective creation. The log T.O.Y.S. Isn’t it brilliant?
+   3) a. finished with clear position. b. All the elements, like the title shown, were customized with our collective creation. The logo T.O.Y.S. Isn’t it brilliant?
    4) finished navigable menu with keyboard (arrow key and “return” key)addition to normal mouse clicking. (Both work perfect!)
    5) a. documented major contributions b. documented external resources.
    6) finished like a charm. really visually compelling and cute.
@@ -55,12 +55,11 @@ v. Detail exact steps grader should take to demonstrate that your game meets ass
    2. The user can use the mouse to select the menu buttons. Notice that the menu buttons have a hover state.
    3. The user can also use the keyboard arrow keys to navigate the menu.
    4. Click the credits menu button to observe our credits and the animations
-   
    ———
 
 vi. Which scene file is the main file that should be opened first in Unity  
    ———
-   to be complete
+   The scene file is called Menu
    ———
 
 
