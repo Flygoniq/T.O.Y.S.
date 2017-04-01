@@ -16,6 +16,7 @@ ii.
    6) finished like a charm. really visually compelling and cute.
 2. Polish via Visual/Image Effects.
    1) Vignette effect - Chosen because it fits the theme of our game. The premise is that in the main character's dream, his toy casted a spell over the other toys to escape. The vignette effect makes it feel like we're looking into a dream.
+   2) Added a halo in the middle to emphasis the vignette effect
 ——— 
 
 iii. Resources acquired outside of class and what it is being used for.
