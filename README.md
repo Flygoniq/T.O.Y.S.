@@ -1,4 +1,4 @@
-# [Untitled Game]
+# T.O.Y.S
 
 Team MixedPower
 Final Video Game Project for CS4455/CS6457
