@@ -19,16 +19,30 @@ ii.
 to be complete
 ——— 
 
-
 iii. Resources acquired outside of class and what it is being used for.
-   1)Assets downloaded
+   1) Assets downloaded
    ———
-   to be complete
+   Models:
+      - Gundams: https://www.turbosquid.com/Search/Index.cfm?keyword=gundam&max_price=0&min_price=0
+      - Robots: https://clara.io/library?gameCheck=true&public=true&query=toy%20robot
+      - Teddy Bear: https://clara.io/view/3fea4e6d-a2d3-44ba-8473-96103dc0d085
+      - Army man: https://www.turbosquid.com/3d-models/free-lwo-model-toy-soldier/458342
+      - Storm Trooper: https://www.turbosquid.com/3d-models/star-wars-storm-trooper-3ds-free/545427.
+      - Battle Droid https://www.turbosquid.com/3d-models/lego-battle-droid-3ds-free/224065
+      - Barbie: http://tf3dm.com/3d-model/barbie-74732.html
+      - Cigar Box: https://www.models-resource.com/pc_computer/harrypotterthechamberofsecrets/model/14391/
+      - Ganondorf: https://www.models-resource.com/gamecube/zeldatwilightprincess/model/2613/
    ———
 
-   2)File found on the internet
+   2) Files found on the internet
    ———
-   to be complete
+   - Kid's room image by Mehrdad Isvandi
+   - Background music
+      - https://www.youtube.com/watch?v=fb8zjXm9bWg
+      - https://www.youtube.com/watch?v=gdG0X_LqPCU
+   - Fonts used
+      - DK Whale Song (http://www.dafont.com/dk-whale-song.font)
+      - KiloGram (http://www.fontspace.com/kallegraphics/kilogram)
    ———
 (The resources acquired for level 01 and even those for the other scenes may subject to future change for the final project. Many may act as placeholders for now.)
 
