@@ -15,8 +15,7 @@ ii.
    5) a. documented major contributions b. documented external resources.
    6) finished like a charm. really visually compelling and cute.
 2. Polish via Visual/Image Effects.
-——— 
-to be complete
+   1) Vignette effect - Chosen because it fits the theme of our game. The premise is that in the main character's dream, his toy casted a spell over the other toys to escape. The vignette effect makes it feel like we're looking into a dream.
 ——— 
 
 iii. Resources acquired outside of class and what it is being used for.
@@ -51,7 +50,11 @@ None
 
 v. Detail exact steps grader should take to demonstrate that your game meets assignment requirements
    ———
-   to be complete
+   1. At the game menu, notice the dancing characters (animated game menu background).
+   2. The user can use the mouse to select the menu buttons. Notice that the menu buttons have a hover state.
+   3. The user can also use the keyboard arrow keys to navigate the menu.
+   4. Click the credits menu button to observe our credits and the animations
+   
    ———
 
 vi. Which scene file is the main file that should be opened first in Unity  
