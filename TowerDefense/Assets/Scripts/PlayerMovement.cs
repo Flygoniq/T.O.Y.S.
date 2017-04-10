@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		verticalVelocity = 0;		// up/down
 
 		// WASD forward/back & left/right movement is stored in "direction"
 		direction = transform.rotation * new Vector3( Input.GetAxis("Horizontal") , 0, Input.GetAxis("Vertical") );
@@ -54,7 +53,9 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate () {
 		// "direction" is the desired movement direction, based on our player's input
 		Vector3 dist = direction * speed * Time.deltaTime;
-		if((!cc.isGrounded) && !(verticalVelocity > 0)) {
+
+		//
+		if((cc.isGrounded) && (verticalVelocity < 0)) {
 			// We are currently on the ground and vertical velocity is
 			// not positive (i.e. we are not starting a jump).
 
@@ -75,12 +76,15 @@ public class PlayerMovement : MonoBehaviour {
 			//
 			// Another option would be to do a raycast down and start the jump/fall animation whenever we were
 			// more than ___ distance above the ground.
+			Debug.Log(verticalVelocity);
+			Debug.Log(cc.isGrounded);
+
 			if(Mathf.Abs(verticalVelocity) > jumpSpeed*0.75f) {
 				anim.SetBool("Jump", true);
 			}
 
 			// Apply gravity.
-//			verticalVelocity += Physics.gravity.y * Time.deltaTime;
+			verticalVelocity += Physics.gravity.y * Time.deltaTime;
 		}
 
 		// Add our verticalVelocity to our actual movement for this frame
