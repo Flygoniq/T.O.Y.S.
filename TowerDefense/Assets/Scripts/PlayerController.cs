@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 
 	static int idleState = Animator.StringToHash ("Base Layer.Idle");
 	static int locoState = Animator.StringToHash ("Base Layer.FwdLocomotion");
-	static int jumpState = Animator.StringToHash("Base Layer.Jump");
+	static int jumpState = Animator.StringToHash("Base Layer.stand_jump");
 //	static int jump0State = Animator.StringToHash("Base Layer.Jump0");
 	static int turnRightState = Animator.StringToHash ("Base Layer.RightTurn");
 	static int turnLeftState = Animator.StringToHash ("Base Layer.LeftTurn");
@@ -53,9 +53,11 @@ public class PlayerController : MonoBehaviour {
 
 		//
 
-		if (Input.GetButtonDown ("Jump")) {
-			anim.SetTrigger ("Jump");
-			//Translate the transform component.
+		if (!(currentBaseState.fullPathHash== jumpState) && Input.GetButtonDown ("Jump")) {
+			// ..set the collider heighst to a float curve in the clip called ColliderHeight
+//			col.height = anim.GetFloat("ColliderHeight");
+			// reset the Jump bool so we can jump again, and so that the state does not loop 
+			anim.SetBool("Jump", true);
 		}
 
 		else if(currentBaseState.fullPathHash== jumpState)
@@ -64,9 +66,9 @@ public class PlayerController : MonoBehaviour {
 			if(!anim.IsInTransition(0))
 			{
 				// ..set the collider height to a float curve in the clip called ColliderHeight
-				col.height = anim.GetFloat("ColliderHeight");
+//				col.height = anim.GetFloat("ColliderHeight");
 				// reset the Jump bool so we can jump again, and so that the state does not loop 
-//				anim.SetBool("Jump", false);
+				anim.SetBool("Jump", false);
 			}
 		}
 
