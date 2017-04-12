@@ -118,7 +118,7 @@ public class GameManager1 : MonoBehaviour {
     }
 
     void UpdateWaveNumber() {
-        waveNumber.GetComponent<Text>().text = "Wave " + wave.ToString() + "/4";
+        waveNumber.GetComponent<Text>().text = "Wave " + wave.ToString();
     }
 
     void GameOver() {
