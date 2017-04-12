@@ -47,7 +47,7 @@ public class GameManager1 : MonoBehaviour {
         if (state == 0) {
 			if (Input.GetKeyDown(KeyCode.Space)) {
                 state = 1;
-				remaining = 3;
+				remaining = 8;
 				timer = 5;
                 DisplayHUD();
             }
