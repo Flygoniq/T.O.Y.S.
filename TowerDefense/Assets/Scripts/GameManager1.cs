@@ -25,7 +25,7 @@ public class GameManager1 : MonoBehaviour {
 
     //0 = start, 1 = playing, 2 = gameover
     int state;
-    int wave;
+    public static int wave;
     float timer;
     bool displayingIntro;
     PlayerHealth playerHealth;
