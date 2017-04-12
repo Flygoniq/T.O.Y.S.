@@ -100,7 +100,7 @@
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
-    <Compile Include="Assets\WeaponSwitcher.cs" />
+    <Compile Include="Assets\Scripts\WeaponSwitcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Models\HD Heavy Gun\Documentation.txt" />

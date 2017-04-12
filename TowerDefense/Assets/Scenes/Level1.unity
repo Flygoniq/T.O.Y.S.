@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 307244827}
   - component: {fileID: 307244826}
   - component: {fileID: 307244829}
+  - component: {fileID: 307244830}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -378,7 +379,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 307244824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 438.61304, y: 10, z: 306.7539}
+  m_LocalPosition: {x: 508.8, y: 19.7, z: 306.7539}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
@@ -450,6 +451,25 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
+--- !u!114 &307244830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 307244824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58840500bab5a464e93b0c397b3b5f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wayPoints: []
+  speed: 3
+  isCircular: 0
+  inReverse: 1
+  currentWaypoint: {fileID: 0}
+  currentIndex: 0
+  isWaiting: 0
+  speedStorage: 0
 --- !u!1 &372011978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,13 +1486,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789486249}
-  m_LocalRotation: {x: -0.17885187, y: 0.17343655, z: -0.032707993, w: -0.9679163}
-  m_LocalPosition: {x: 0.00045, y: 0.0023, z: -0.00081}
+  m_LocalRotation: {x: -0.18338752, y: 0.10589721, z: -0.03632444, w: -0.976645}
+  m_LocalPosition: {x: 0.000446, y: 0.002503, z: -0.002677}
   m_LocalScale: {x: 0.00006250003, y: 0.0000625, z: 0.00006250004}
   m_Children: []
   m_Father: {fileID: 516265910}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 21.463001, y: -12.002001, z: 1.9770001}
 --- !u!81 &789486251
 AudioListener:
   m_ObjectHideFlags: 0
