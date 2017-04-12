@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 516265911}
   - component: {fileID: 516265912}
   - component: {fileID: 516265914}
+  - component: {fileID: 516265915}
   m_Layer: 0
   m_Name: Dewinged_Buzz
   m_TagString: Untagged
@@ -868,6 +869,19 @@ MonoBehaviour:
   deathClip: {fileID: 0}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+--- !u!114 &516265915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 516265902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b14b05bc1ce644f8eac9b07eab0ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sword: {fileID: 635065831}
+  gun: {fileID: 573899398}
 --- !u!1 &534317926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1167,88 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573899398}
   m_Mesh: {fileID: 4300000, guid: 071a54a6581434b4185a0103080a2e30, type: 3}
+--- !u!1001 &635065829
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1066432831}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00005
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000159
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000075
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.75407434
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.04360903
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.653104
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.054085378
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.00015029272
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0003541884
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0004883015
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 1.4100001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -98.11201
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 187.84299
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_Name
+      value: Medieval Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+  m_IsPrefabParent: 0
+--- !u!4 &635065830 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+  m_PrefabInternal: {fileID: 635065829}
+--- !u!1 &635065831 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
+  m_PrefabInternal: {fileID: 635065829}
 --- !u!1 &667364566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1850,7 @@ Transform:
   - {fileID: 1209320310}
   - {fileID: 1124301627}
   - {fileID: 1255289736}
+  - {fileID: 635065830}
   m_Father: {fileID: 723619095}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1927,7 +2024,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -681762513
+  randomSeed: 1158378175
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5044,7 +5141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1255289736
 Transform:
   m_ObjectHideFlags: 0
