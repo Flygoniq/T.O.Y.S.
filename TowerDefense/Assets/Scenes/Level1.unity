@@ -1272,7 +1272,7 @@ MonoBehaviour:
   mouseSensitivity: 10
   target: {fileID: 0}
   distanceFromTarget: 100
-  pitchMinMax: {x: -40, y: 0}
+  pitchMinMax: {x: 0, y: 0}
   rotationSmoothTime: 0.12
 --- !u!114 &516265912
 MonoBehaviour:
@@ -3056,7 +3056,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1124301626}
   serializedVersion: 5
   lengthInSec: 0.5
-  simulationSpeed: 1
+  speed: 1
   looping: 0
   prewarm: 0
   playOnAwake: 0
