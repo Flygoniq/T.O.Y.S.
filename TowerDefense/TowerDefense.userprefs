@@ -1,13 +1,27 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties StartupItem="TowerDefense.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MouseLook.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement.cs">
     <Files>
       <File FileName="Assets\Scripts\Weapons\WeaponSwitcher.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ArmyMan.cs" Line="54" Column="4" />
+      <File FileName="Assets\Scripts\ArmyMan.cs" Line="10" Column="20" />
       <File FileName="Assets\Scripts\BuzzMenuScript.cs" Line="9" Column="2" />
-      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="23" Column="35" />
+      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MouseLook.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager1.cs" Line="17" Column="25" />
+      <File FileName="Assets\Scripts\NexusStats.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TowerDefense" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="TowerDefense" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
