@@ -49,6 +49,8 @@ public class ArmyMan : MonoBehaviour {
 		}
 		if (state == "aggressive") {
 			agent.destination = player.position;
+		} else {
+			agent.destination = goal.position;
 		}
 		timer += Time.deltaTime;
 
