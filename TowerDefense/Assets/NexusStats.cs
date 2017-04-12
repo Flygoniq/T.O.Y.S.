@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NexusStats : MonoBehaviour {
 
-    public int nexusHealth;
+    public static int nexusHealth;
     public int startHealth = 20;
     public int damage = 1;
 
