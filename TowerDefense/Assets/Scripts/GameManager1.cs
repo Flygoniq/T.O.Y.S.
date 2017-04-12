@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager1 : MonoBehaviour {
 
+	int remaining;
+
     public GameObject player;
     public GameObject nexus;
 
@@ -45,7 +47,8 @@ public class GameManager1 : MonoBehaviour {
         if (state == 0) {
 			if (Input.GetKeyDown(KeyCode.Space)) {
                 state = 1;
-				timer = 0;
+				remaining = 3;
+				timer = 5;
                 DisplayHUD();
             }
         } else if (state == 1) {
@@ -57,16 +60,16 @@ public class GameManager1 : MonoBehaviour {
             } else if (wave == 2) {//!!! this is obviously going to have to change back to a higher number, 5 atm
                 Victory();
             } else {
-                if (timer >= 60) {
+                if (timer >= 45) {
                     if (enemies.Length == 0) {
                         wave += 1;
 						timer = 0;
                         UpdateWaveNumber();
-                        timer = 0;
                     }
                 } else if (wave == 1) {
-                    if (timer % 10 == 0) {
-                        SpawnEnemy(spawnPoints[0], 3);
+					if (timer >= 5 && remaining > 0) {
+                        SpawnEnemy(spawnPoints[0], 1);
+						timer = 0;
                     }
                 } else if (wave == 0) {//!!! change this back to 2 later
                     if (timer % 10 == 0) {

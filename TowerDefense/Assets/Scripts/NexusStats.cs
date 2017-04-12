@@ -19,11 +19,16 @@ public class NexusStats : MonoBehaviour {
 	}
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "enemy")
+        /*if (collision.gameObject.tag == "enemy")
         {
             nexusHealth -= damage;
-        }
+        }*/
         
     }
+
+	public void TakeDamage (int damage) {
+		nexusHealth -= damage;
+
+	}
 
 }

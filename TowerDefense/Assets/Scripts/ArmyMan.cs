@@ -12,12 +12,15 @@ public class ArmyMan : MonoBehaviour {
 	float timer;
 
 	Transform player;
+	PlayerHealth playerHealth;
+	NexusStats nexusStats;
 	Transform goal;
 
 	public int maxHP;
-	public float aggrodist; //distance at which enemy targets players instead
-	public float leashdist; //distance at which enemy returns to default behaviour
-	public int power = 1;
+	public float aggrodist = 150; //distance at which enemy targets players instead
+	public float leashdist = 200; //distance at which enemy returns to default behaviour
+	public int power = 10;
+	public int nexusAttack = 1;
 	public float timeBetweenAttacks = 1.5f;
 
 	// Use this for initialization
@@ -29,13 +32,14 @@ public class ArmyMan : MonoBehaviour {
 		HP = maxHP;
 		timer = 0;
 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform>();
+		playerHealth = GameObject.FindGameObjectWithTag ("Player").GetComponent <PlayerHealth> ();
 		goal = GameObject.FindGameObjectWithTag ("Nexus").GetComponent<Transform>();
+		nexusStats = GameObject.FindGameObjectWithTag ("Nexus").GetComponent<NexusStats> ();
 		agent.destination = goal.position;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		Debug.Log (state);
 		float dist = Vector3.Distance (transform.position, player.position);
 		if (dist <= aggrodist) {
 			state = "aggressive";
@@ -52,8 +56,24 @@ public class ArmyMan : MonoBehaviour {
 
 	void OnCollisionEnter (Collision other) {
 		if (other.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
-			//!!! insert attack here
+			playerHealth.TakeDamage (power);
 			timer = 0;
+		}
+		if (other.gameObject.tag == "Nexus") {
+			nexusStats.TakeDamage (nexusAttack);
+			Destroy (gameObject);
+		}
+	}
+
+	void OnCollisionStay (Collision other) {
+		if (other.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
+			playerHealth.TakeDamage (power);
+			timer = 0;
+		}
+		if (other.gameObject.tag == "Nexus") {
+			Debug.Log ("hit nexus");
+			nexusStats.TakeDamage (nexusAttack);
+			Destroy (gameObject);
 		}
 	}
 }
