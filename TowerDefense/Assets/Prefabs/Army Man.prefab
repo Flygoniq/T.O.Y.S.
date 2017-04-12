@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 195320259930707554}
   m_Layer: 0
   m_Name: Army Man
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,8 +677,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1718999236956892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalPosition: {x: 456.5, y: 1.8777905, z: 272}
+  m_LocalScale: {x: 1100, y: 1100, z: 1100}
   m_Children:
   - {fileID: 4958942103083220}
   - {fileID: 4956683853299876}
@@ -1088,10 +1088,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
-  maxHP: 0
-  aggrodist: 0
+  maxHP: 10
+  aggrodist: 4
   leashdist: 0
   power: 1
+  timeBetweenAttacks: 1.5
 --- !u!137 &137758502079261128
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

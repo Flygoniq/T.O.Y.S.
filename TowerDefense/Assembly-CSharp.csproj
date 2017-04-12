@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\GameManagement\GameController.cs" />
      <Compile Include="Assets\Scripts\GameManagement\SoundController.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameManager1.cs" />
      <Compile Include="Assets\Scripts\GameOver.cs" />
      <Compile Include="Assets\Scripts\GanonMenuScript.cs" />

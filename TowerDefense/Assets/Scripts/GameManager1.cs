@@ -31,7 +31,7 @@ public class GameManager1 : MonoBehaviour {
 
     void Start() {
         state = 0;
-        wave = 0;
+        wave = 1;
         displayingIntro = false;
         intro.SetActive(true);
         hud.SetActive(false);
@@ -45,6 +45,7 @@ public class GameManager1 : MonoBehaviour {
         if (state == 0) {
 			if (Input.GetKeyDown(KeyCode.Space)) {
                 state = 1;
+				timer = 0;
                 DisplayHUD();
             }
         } else if (state == 1) {
@@ -53,20 +54,21 @@ public class GameManager1 : MonoBehaviour {
                 GameOver();
             } else if (NexusStats.nexusHealth <= 0) {
                 GameOver();
-            } else if (wave == 5) {
+            } else if (wave == 2) {//!!! this is obviously going to have to change back to a higher number, 5 atm
                 Victory();
             } else {
                 timer += Time.deltaTime;
                 if (timer >= 60) {
                     if (enemies.Length == 0) {
                         wave += 1;
+						timer = 0;
                         UpdateWaveNumber();
                     }
                 } else if (wave == 1) {
                     if (timer % 10 == 0) {
                         SpawnEnemy(spawnPoints[0], 3);
                     }
-                } else if (wave == 2) {
+                } else if (wave == 0) {//!!! change this back to 2 later
                     if (timer % 10 == 0) {
                         if (timer % 2 == 0) {
                             SpawnEnemy(spawnPoints[0], 1);

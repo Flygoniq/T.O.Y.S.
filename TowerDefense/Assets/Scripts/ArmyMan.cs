@@ -12,7 +12,7 @@ public class ArmyMan : MonoBehaviour {
 	float timer;
 
 	Transform player;
-	public Transform goal;
+	Transform goal;
 
 	public int maxHP;
 	public float aggrodist; //distance at which enemy targets players instead
@@ -28,17 +28,20 @@ public class ArmyMan : MonoBehaviour {
 		state = "default";
 		HP = maxHP;
 		timer = 0;
-		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform>();
+		goal = GameObject.FindGameObjectWithTag ("Nexus").GetComponent<Transform>();
 		agent.destination = goal.position;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		Debug.Log (state);
 		float dist = Vector3.Distance (transform.position, player.position);
 		if (dist <= aggrodist) {
 			state = "aggressive";
 		} else if (dist >= leashdist) {
 			state = "default";
+			agent.destination = goal.position;
 		}
 		if (state == "aggressive") {
 			agent.destination = player.position;
@@ -47,7 +50,7 @@ public class ArmyMan : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter (Collider other) {
+	void OnCollisionEnter (Collision other) {
 		if (other.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
 			//!!! insert attack here
 			timer = 0;
