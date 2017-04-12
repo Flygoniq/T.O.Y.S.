@@ -6,22 +6,27 @@ public class PlayerShooting : MonoBehaviour {
 	public float timeBetweenBullets = 0.15f;
 	float timer;
 	public int damage = 25;
-	public float range = 100f;
-	int shootableMask;
+	public float range = 100000f;
+	int attackableMask;
 	ParticleSystem gunParticles;
 	LineRenderer gunLine;
 	AudioSource gunAudio;
 	Light gunLight;
 	float effectsDisplayTime = 0.2f;
+	public GameObject player;
+	Animator playerAnim;
+	Animator gunAnim;
 
 
 	void Awake ()
 	{
-		shootableMask = LayerMask.GetMask ("Shootable");
+		attackableMask = LayerMask.GetMask ("Attackable");
 		gunParticles = GetComponent<ParticleSystem> ();
 		gunLine = GetComponent <LineRenderer> ();
 		gunAudio = GetComponent<AudioSource> ();
 		gunLight = GetComponent <Light> ();
+		playerAnim = player.GetComponent<Animator> ();
+		gunAnim = GetComponentInParent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -50,6 +55,10 @@ public class PlayerShooting : MonoBehaviour {
 		
 		Debug.Log ("Firing our gun!");
 
+		playerAnim.SetTrigger ("Shoot");
+		gunAnim.SetTrigger ("Shoot");
+
+
 		timer = 0f;
 
 		gunAudio.Play();
@@ -70,7 +79,7 @@ public class PlayerShooting : MonoBehaviour {
 //
 //		hitTransform = FindClosestHitObject(shootRay, out hitPoint);
 
-		if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
+		if(Physics.Raycast (shootRay, out shootHit, range, attackableMask))
 		{
 			Debug.Log ("We hit: " + shootHit.collider.name);
 

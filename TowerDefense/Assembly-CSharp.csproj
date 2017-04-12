@@ -66,13 +66,14 @@
      <Compile Include="Assets\Scripts\PanelManager.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\PlayerShooting.cs" />
      <Compile Include="Assets\Scripts\RemyController.cs" />
      <Compile Include="Assets\Scripts\ResizePanel.cs" />
      <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
-     <Compile Include="Assets\Scripts\WeaponSwitcher.cs" />
+     <Compile Include="Assets\Scripts\Weapons\PlayerShooting.cs" />
+     <Compile Include="Assets\Scripts\Weapons\SwordController.cs" />
+     <Compile Include="Assets\Scripts\Weapons\WeaponSwitcher.cs" />
      <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Models\HD Heavy Gun\Documentation.txt" />
  <Reference Include="UnityEngine.Purchasing">

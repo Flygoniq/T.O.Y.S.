@@ -10,9 +10,9 @@ public class EnemyHealth : MonoBehaviour
 
 	Transform tf;
     Animator anim;
-    AudioSource enemyAudio;
-    ParticleSystem hitParticles;
-    CapsuleCollider capsuleCollider;
+    //AudioSource enemyAudio;
+//    ParticleSystem hitParticles;
+	BoxCollider boxCollider;
     bool isDead;
     bool isSinking;
 
@@ -20,10 +20,10 @@ public class EnemyHealth : MonoBehaviour
     void Awake ()
     {
 		tf = GetComponent <Transform> ();
-        anim = GetComponent <Animator> ();
-        enemyAudio = GetComponent <AudioSource> ();
-        hitParticles = GetComponentInChildren <ParticleSystem> ();
-        capsuleCollider = GetComponent <CapsuleCollider> ();
+//        anim = GetComponent <Animator> ();
+//        enemyAudio = GetComponent <AudioSource> ();
+//        hitParticles = GetComponentInChildren <ParticleSystem> ();
+        boxCollider = GetComponent <BoxCollider> ();
 
         currentHealth = startingHealth;
     }
@@ -44,14 +44,14 @@ public class EnemyHealth : MonoBehaviour
         if(isDead)
             return;
 
-        enemyAudio.Play ();
+//        enemyAudio.Play ();
 
 		tf.position = tf.position + hitDirection;
 
         currentHealth -= amount;
             
-        hitParticles.transform.position = hitPoint;
-        hitParticles.Play();
+//        hitParticles.transform.position = hitPoint;
+//        hitParticles.Play();
 
         if(currentHealth <= 0)
         {
@@ -63,20 +63,20 @@ public class EnemyHealth : MonoBehaviour
     {
         isDead = true;
 
-        capsuleCollider.isTrigger = true;  //So that the collider is no longer physically present.
+        boxCollider.isTrigger = true;  //So that the collider is no longer physically present.
+		Destroy (gameObject, 2f);
+//        anim.SetTrigger ("Dead");
 
-        anim.SetTrigger ("Dead");
-
-        enemyAudio.clip = deathClip;
-        enemyAudio.Play ();
+//        enemyAudio.clip = deathClip;
+//        enemyAudio.Play ();
     }
 
 
-    public void StartSinking ()
-    {
-		GetComponent <UnityEngine.AI.NavMeshAgent> ().enabled = false; //enabled for components; setActive for game object
-        GetComponent <Rigidbody> ().isKinematic = true;
-        isSinking = true;
-        Destroy (gameObject, 2f);
-    }
+//    public void StartSinking ()
+//    {
+////		GetComponent <UnityEngine.AI.NavMeshAgent> ().enabled = false; //enabled for components; setActive for game object
+////        GetComponent <Rigidbody> ().isKinematic = true;
+////        isSinking = true;
+//        Destroy (gameObject, 2f);
+//    }
 }
