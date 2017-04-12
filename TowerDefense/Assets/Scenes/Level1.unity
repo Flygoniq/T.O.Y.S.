@@ -699,7 +699,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &307244826
 MeshRenderer:
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
-  currentHealth: 100
+  currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
@@ -812,7 +812,7 @@ Prefab:
     - target: {fileID: 224753681837032500, guid: 1017509f453a4824d9d482e3306c34b7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224753681837032500, guid: 1017509f453a4824d9d482e3306c34b7,
         type: 2}
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c128cebe05f78d4aaa05d213cc76a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberWavesSurvivedText: {fileID: 254006263}
+  numberWavesSurvivedText: {fileID: 0}
 --- !u!1 &372011978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1080,6 @@ GameObject:
   m_Component:
   - component: {fileID: 435397789}
   - component: {fileID: 435397788}
-  - component: {fileID: 435397787}
   m_Layer: 0
   m_Name: Directional Light (3)
   m_TagString: Untagged
@@ -1088,29 +1087,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &435397787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 435397786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 516265902}
-  nexus: {fileID: 1227524747}
-  spawnPoints:
-  - {fileID: 1651154553}
-  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  intro: {fileID: 1547706796}
-  hud: {fileID: 1908903679}
-  defeat: {fileID: 1678888957}
-  victory: {fileID: 548648820}
-  healthNumber: {fileID: 1669246503}
-  waveNumber: {fileID: 658694085}
-  nexusNumber: {fileID: 1412261371}
 --- !u!108 &435397788
 Light:
   m_ObjectHideFlags: 0
@@ -1264,7 +1240,6 @@ GameObject:
   m_Component:
   - component: {fileID: 509648096}
   - component: {fileID: 509648098}
-  - component: {fileID: 509648097}
   m_Layer: 0
   m_Name: Directional Light (7)
   m_TagString: Untagged
@@ -1285,29 +1260,6 @@ Transform:
   m_Father: {fileID: 1789336354}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 60, y: -90, z: 0}
---- !u!114 &509648097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 509648095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 516265902}
-  nexus: {fileID: 1227524747}
-  spawnPoints:
-  - {fileID: 1651154553}
-  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  intro: {fileID: 1547706796}
-  hud: {fileID: 1908903679}
-  defeat: {fileID: 1678888957}
-  victory: {fileID: 548648820}
-  healthNumber: {fileID: 1669246503}
-  waveNumber: {fileID: 658694085}
-  nexusNumber: {fileID: 1412261371}
 --- !u!108 &509648098
 Light:
   m_ObjectHideFlags: 0
@@ -1562,8 +1514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2aa0b7bc15c4a00a8f9cc8faaf4cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  jumpSpeed: 1
+  speed: 10
+  jumpSpeed: 6
 --- !u!143 &516265913
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1741,11 +1693,6 @@ Transform:
   m_Father: {fileID: 2113396560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &548648820 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1824204211681928, guid: 1017509f453a4824d9d482e3306c34b7,
-    type: 2}
-  m_PrefabInternal: {fileID: 314323987}
 --- !u!1 &557714889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1852,7 @@ RectTransform:
   m_Children:
   - {fileID: 347269965}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2022,7 +1969,6 @@ GameObject:
   m_Component:
   - component: {fileID: 609140458}
   - component: {fileID: 609140460}
-  - component: {fileID: 609140459}
   m_Layer: 0
   m_Name: Directional Light (4)
   m_TagString: Untagged
@@ -2043,29 +1989,6 @@ Transform:
   m_Father: {fileID: 1789336354}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 60, y: 90, z: 0}
---- !u!114 &609140459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 609140457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 516265902}
-  nexus: {fileID: 1227524747}
-  spawnPoints:
-  - {fileID: 1651154553}
-  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  intro: {fileID: 1547706796}
-  hud: {fileID: 1908903679}
-  defeat: {fileID: 1678888957}
-  victory: {fileID: 548648820}
-  healthNumber: {fileID: 1669246503}
-  waveNumber: {fileID: 658694085}
-  nexusNumber: {fileID: 1412261371}
 --- !u!108 &609140460
 Light:
   m_ObjectHideFlags: 0
@@ -2206,7 +2129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d022d3ef6ae847a689a43b72271c49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttack: 0.1
+  timeBetweenAttack: 0.5
   damage: 25
   player: {fileID: 0}
 --- !u!82 &635065837
@@ -2410,48 +2333,6 @@ Transform:
   m_Father: {fileID: 516265910}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &669658984
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4401510226336088, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 378.42133
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401510226336088, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.8777628
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401510226336088, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 473.3503
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401510226336088, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401510226336088, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401510226336088, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401510226336088, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401510226336088, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &690208670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,7 +2755,6 @@ GameObject:
   m_Component:
   - component: {fileID: 905545176}
   - component: {fileID: 905545175}
-  - component: {fileID: 905545174}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -2882,29 +2762,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &905545174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 905545173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 516265902}
-  nexus: {fileID: 1227524747}
-  spawnPoints:
-  - {fileID: 1651154553}
-  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  intro: {fileID: 1547706796}
-  hud: {fileID: 1908903679}
-  defeat: {fileID: 1678888957}
-  victory: {fileID: 548648820}
-  healthNumber: {fileID: 1669246503}
-  waveNumber: {fileID: 658694085}
-  nexusNumber: {fileID: 1412261371}
 --- !u!108 &905545175
 Light:
   m_ObjectHideFlags: 0
@@ -2997,7 +2854,7 @@ Prefab:
     - target: {fileID: 224432720009600924, guid: ee769b30e3128e44a953e8a9bbdc0dc2,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224432720009600924, guid: ee769b30e3128e44a953e8a9bbdc0dc2,
         type: 2}
@@ -3155,7 +3012,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4057346552503778, guid: cb095fdb860c34aa3ae9d6ea5b3ecb80, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4057346552503778, guid: cb095fdb860c34aa3ae9d6ea5b3ecb80, type: 2}
       propertyPath: m_LocalScale.x
@@ -3705,7 +3562,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1756173678
+  randomSeed: -415329918
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6540,7 +6397,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1130131434}
   - component: {fileID: 1130131433}
-  - component: {fileID: 1130131435}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -6595,29 +6451,6 @@ Transform:
   m_Father: {fileID: 1789336354}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1130131435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1130131432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 516265902}
-  nexus: {fileID: 1227524747}
-  spawnPoints:
-  - {fileID: 1651154553}
-  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  intro: {fileID: 1547706796}
-  hud: {fileID: 1908903679}
-  defeat: {fileID: 1678888957}
-  victory: {fileID: 548648820}
-  healthNumber: {fileID: 1669246503}
-  waveNumber: {fileID: 658694085}
-  nexusNumber: {fileID: 1412261371}
 --- !u!1 &1134120307
 GameObject:
   m_ObjectHideFlags: 0
@@ -6694,7 +6527,7 @@ Prefab:
     - target: {fileID: 224715848792393384, guid: e575ba089d8a03749bc9359bcef9d4b9,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224715848792393384, guid: e575ba089d8a03749bc9359bcef9d4b9,
         type: 2}
@@ -7306,10 +7139,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1380295390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e039b58d218544f8cb64daac1c3c24, type: 3}
+  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 0}
+  player: {fileID: 516265902}
+  nexus: {fileID: 1227524747}
+  spawnPoints:
+  - {fileID: 1651154553}
+  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
+  intro: {fileID: 1747549253321910, guid: ee769b30e3128e44a953e8a9bbdc0dc2, type: 2}
+  hud: {fileID: 1391940628324150, guid: bec5a5eddc07c80498e8c8c02afba369, type: 2}
+  defeat: {fileID: 1089609579210734, guid: e575ba089d8a03749bc9359bcef9d4b9, type: 2}
+  victory: {fileID: 1824204211681928, guid: 1017509f453a4824d9d482e3306c34b7, type: 2}
+  healthNumber: {fileID: 1669246503}
+  waveNumber: {fileID: 658694085}
+  nexusNumber: {fileID: 1412261371}
 --- !u!224 &1380295392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7321,7 +7165,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7406,7 +7250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1455742133}
   - component: {fileID: 1455742135}
-  - component: {fileID: 1455742134}
   m_Layer: 0
   m_Name: Directional Light (5)
   m_TagString: Untagged
@@ -7427,29 +7270,6 @@ Transform:
   m_Father: {fileID: 1789336354}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 60, y: 90, z: 0}
---- !u!114 &1455742134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1455742132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 516265902}
-  nexus: {fileID: 1227524747}
-  spawnPoints:
-  - {fileID: 1651154553}
-  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  intro: {fileID: 1547706796}
-  hud: {fileID: 1908903679}
-  defeat: {fileID: 1678888957}
-  victory: {fileID: 548648820}
-  healthNumber: {fileID: 1669246503}
-  waveNumber: {fileID: 658694085}
-  nexusNumber: {fileID: 1412261371}
 --- !u!108 &1455742135
 Light:
   m_ObjectHideFlags: 0
@@ -7614,11 +7434,6 @@ Transform:
   m_Father: {fileID: 787186507}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1547706796 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1747549253321910, guid: ee769b30e3128e44a953e8a9bbdc0dc2,
-    type: 2}
-  m_PrefabInternal: {fileID: 941827785}
 --- !u!1 &1598331606
 GameObject:
   m_ObjectHideFlags: 0
@@ -7710,7 +7525,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1651154552
 GameObject:
@@ -7738,7 +7553,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664975259
 GameObject:
@@ -7855,11 +7670,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2040240772}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!1 &1678888957 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1089609579210734, guid: e575ba089d8a03749bc9359bcef9d4b9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1154487555}
 --- !u!1 &1680966322
 GameObject:
   m_ObjectHideFlags: 0
@@ -7930,7 +7740,7 @@ Transform:
   - {fileID: 2091005630}
   - {fileID: 509648096}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791083456
 GameObject:
@@ -7978,7 +7788,7 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1798248290
 GameObject:
@@ -8072,11 +7882,6 @@ Transform:
   m_Father: {fileID: 31294040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1908903679 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1391940628324150, guid: bec5a5eddc07c80498e8c8c02afba369,
-    type: 2}
-  m_PrefabInternal: {fileID: 2040240772}
 --- !u!1 &1913334373
 GameObject:
   m_ObjectHideFlags: 0
@@ -8086,7 +7891,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1913334376}
   - component: {fileID: 1913334375}
-  - component: {fileID: 1913334374}
   m_Layer: 0
   m_Name: Directional Light (2)
   m_TagString: Untagged
@@ -8094,29 +7898,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1913334374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1913334373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 516265902}
-  nexus: {fileID: 1227524747}
-  spawnPoints:
-  - {fileID: 1651154553}
-  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  intro: {fileID: 1547706796}
-  hud: {fileID: 1908903679}
-  defeat: {fileID: 1678888957}
-  victory: {fileID: 548648820}
-  healthNumber: {fileID: 1669246503}
-  waveNumber: {fileID: 658694085}
-  nexusNumber: {fileID: 1412261371}
 --- !u!108 &1913334375
 Light:
   m_ObjectHideFlags: 0
@@ -8294,7 +8075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2040240772
 Prefab:
@@ -8341,7 +8122,7 @@ Prefab:
     - target: {fileID: 224610573962339354, guid: bec5a5eddc07c80498e8c8c02afba369,
         type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 224610573962339354, guid: bec5a5eddc07c80498e8c8c02afba369,
         type: 2}
@@ -8479,7 +8260,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2091005630}
   - component: {fileID: 2091005632}
-  - component: {fileID: 2091005631}
   m_Layer: 0
   m_Name: Directional Light (6)
   m_TagString: Untagged
@@ -8500,29 +8280,6 @@ Transform:
   m_Father: {fileID: 1789336354}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 60, y: -90, z: 0}
---- !u!114 &2091005631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2091005629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 516265902}
-  nexus: {fileID: 1227524747}
-  spawnPoints:
-  - {fileID: 1651154553}
-  enemy: {fileID: 1718999236956892, guid: a62f6a949c470b54fab6739ddad61176, type: 2}
-  intro: {fileID: 1547706796}
-  hud: {fileID: 1908903679}
-  defeat: {fileID: 1678888957}
-  victory: {fileID: 548648820}
-  healthNumber: {fileID: 1669246503}
-  waveNumber: {fileID: 658694085}
-  nexusNumber: {fileID: 1412261371}
 --- !u!108 &2091005632
 Light:
   m_ObjectHideFlags: 0
