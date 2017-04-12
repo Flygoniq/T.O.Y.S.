@@ -18,9 +18,10 @@ public class NexusStats : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision) {
+    void OnCollisionEnter(Collision collision) {
         /*if (collision.gameObject.tag == "enemy")
         {
+			Debug.Log ("Ouch");
             nexusHealth -= damage;
         }*/
         

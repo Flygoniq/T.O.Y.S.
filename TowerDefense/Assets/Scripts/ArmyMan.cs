@@ -16,7 +16,7 @@ public class ArmyMan : MonoBehaviour {
 	NexusStats nexusStats;
 	Transform goal;
 
-	public int maxHP;
+	public int maxHP = 100;
 	public float aggrodist = 150; //distance at which enemy targets players instead
 	public float leashdist = 200; //distance at which enemy returns to default behaviour
 	public int power = 10;
@@ -71,8 +71,14 @@ public class ArmyMan : MonoBehaviour {
 			timer = 0;
 		}
 		if (other.gameObject.tag == "Nexus") {
-			Debug.Log ("hit nexus");
 			nexusStats.TakeDamage (nexusAttack);
+			Destroy (gameObject);
+		}
+	}
+
+	public void TakeDamage (int damage) {
+		HP -= damage;
+		if (HP <= 0) {
 			Destroy (gameObject);
 		}
 	}

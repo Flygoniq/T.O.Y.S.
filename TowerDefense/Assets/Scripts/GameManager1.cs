@@ -69,6 +69,7 @@ public class GameManager1 : MonoBehaviour {
                 } else if (wave == 1) {
 					if (timer >= 5 && remaining > 0) {
                         SpawnEnemy(spawnPoints[0], 1);
+						remaining--;
 						timer = 0;
                     }
                 } else if (wave == 0) {//!!! change this back to 2 later
