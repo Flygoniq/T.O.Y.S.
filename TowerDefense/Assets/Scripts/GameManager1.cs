@@ -58,9 +58,10 @@ public class GameManager1 : MonoBehaviour {
             } else if (NexusStats.nexusHealth <= 0) {
                 GameOver();
             } else if (wave == 2) {//!!! this is obviously going to have to change back to a higher number, 5 atm
+				Debug.Log("trigger victory");
                 Victory();
             } else {
-                if (timer >= 45) {
+                if (timer >= 5) {
                     if (enemies.Length == 0) {
                         wave += 1;
 						timer = 0;
