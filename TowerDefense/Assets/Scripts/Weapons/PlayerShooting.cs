@@ -52,7 +52,7 @@ public class PlayerShooting : MonoBehaviour {
 	}
 
 	void Fire() {
-		
+
 		Debug.Log ("Firing our gun!");
 
 		playerAnim.SetTrigger ("Shoot");
@@ -69,9 +69,9 @@ public class PlayerShooting : MonoBehaviour {
 		gunParticles.Play ();
 
 		gunLine.enabled = true;
-		gunLine.SetPosition (0, transform.position);  
+		gunLine.SetPosition (0, transform.position);
 
-		Ray shootRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+		Ray shootRay = new Ray(Camera.main.transform.position, player.transform.rotation);
 		RaycastHit shootHit;
 
 //		Transform hitTransform;
