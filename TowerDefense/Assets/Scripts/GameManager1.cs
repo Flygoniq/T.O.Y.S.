@@ -57,12 +57,12 @@ public class GameManager1 : MonoBehaviour {
             } else if (wave == 2) {//!!! this is obviously going to have to change back to a higher number, 5 atm
                 Victory();
             } else {
-                timer += Time.deltaTime;
                 if (timer >= 60) {
                     if (enemies.Length == 0) {
                         wave += 1;
 						timer = 0;
                         UpdateWaveNumber();
+                        timer = 0;
                     }
                 } else if (wave == 1) {
                     if (timer % 10 == 0) {
@@ -93,6 +93,7 @@ public class GameManager1 : MonoBehaviour {
                         SpawnEnemy(spawnPoints[(int) Random.value * 3], 1);
                     }
                 }
+                timer += Time.deltaTime;
             }
             UpdateHealth();
         } else if (state == 2) {
@@ -119,7 +120,7 @@ public class GameManager1 : MonoBehaviour {
     }
 
     void UpdateWaveNumber() {
-        waveNumber.GetComponent<Text>().text = "Wave " + wave.ToString() + "/4";
+        waveNumber.GetComponent<Text>().text = "Wave " + wave.ToString();
     }
 
     void GameOver() {
