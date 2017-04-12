@@ -33,7 +33,7 @@ public class PlayerShooting : MonoBehaviour {
 	void Update () {
 		timer += Time.deltaTime;
 
-		if(Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0) {
+		if(WeaponSwitcher.gunEquipped && Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0) {
 			// Player wants to shoot...so. Shoot.
 			Fire ();
 		}

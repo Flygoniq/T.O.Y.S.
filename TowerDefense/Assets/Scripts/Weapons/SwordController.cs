@@ -35,7 +35,7 @@ public class SwordController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if(Input.GetButton("Fire1") && timer >= timeBetweenAttack && Time.timeScale != 0) {
+		if(WeaponSwitcher.swordEquipped && Input.GetButton("Fire1") && timer >= timeBetweenAttack && Time.timeScale != 0) {
 			Attack ();
 		}
 		
