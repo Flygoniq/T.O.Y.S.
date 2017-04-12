@@ -61,7 +61,7 @@ public class GameManager1 : MonoBehaviour {
 				Debug.Log("trigger victory");
                 Victory();
             } else {
-                if (timer >= 5) {
+                if (timer >= 5.5f) {
                     if (enemies.Length == 0) {
                         wave += 1;
 						timer = 0;

@@ -69,7 +69,7 @@ public class PlayerShooting : MonoBehaviour {
 		gunLine.enabled = true;
 		gunLine.SetPosition (0, transform.position);
 
-		Ray shootRay = new Ray(Camera.main.transform.position, player.transform.forward);
+		Ray shootRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 		RaycastHit shootHit;
 
 //		Transform hitTransform;
