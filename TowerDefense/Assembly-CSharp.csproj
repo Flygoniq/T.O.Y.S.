@@ -46,10 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameManager.cs" />
-     <Compile Include="Assets\GameOver.cs" />
-     <Compile Include="Assets\MenuManager.cs" />
-     <Compile Include="Assets\NexusStats.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\ArmyMan.cs" />
@@ -57,17 +53,31 @@
      <Compile Include="Assets\Scripts\Button Scripts\CreditsButton.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\PlayCredits.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\StartButton.cs" />
+     <Compile Include="Assets\Scripts\Button Scripts\StartGameButton.cs" />
      <Compile Include="Assets\Scripts\BuzzMenuScript.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraRig.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\Scripts\Characters\AI.cs" />
+     <Compile Include="Assets\Scripts\Characters\CharacterMovement.cs" />
+     <Compile Include="Assets\Scripts\Characters\CharacterStats.cs" />
+     <Compile Include="Assets\Scripts\Characters\FootstepSounds.cs" />
      <Compile Include="Assets\Scripts\DragMe.cs" />
      <Compile Include="Assets\Scripts\DragPanel.cs" />
      <Compile Include="Assets\Scripts\DropMe.cs" />
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\GameManagement\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameManagement\SoundController.cs" />
+     <Compile Include="Assets\Scripts\GameManager1.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
      <Compile Include="Assets\Scripts\GanonMenuScript.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\Managers\GameOverManager.cs" />
+     <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\NexusStats.cs" />
      <Compile Include="Assets\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerUI.cs" />
+     <Compile Include="Assets\Scripts\Player\UserInput.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\RemyController.cs" />
@@ -75,10 +85,12 @@
      <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\Scripts\Utilities\TerrainSurface.cs" />
      <Compile Include="Assets\Scripts\Weapons\PlayerShooting.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordController.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Weapons\WeaponHandler.cs" />
      <Compile Include="Assets\Scripts\Weapons\WeaponSwitcher.cs" />
-     <Compile Include="Assets\StartGameButton.cs" />
      <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Models\HD Heavy Gun\Documentation.txt" />
  <Reference Include="UnityEngine.UI">

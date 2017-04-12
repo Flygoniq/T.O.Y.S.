@@ -27,10 +27,10 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 
 		// WASD forward/back & left/right movement is stored in "direction"
-		direction = transform.rotation * new Vector3( Input.GetAxis("Horizontal") , 0, Input.GetAxis("Vertical") );
+		direction = transform.rotation * new Vector3( Input.GetAxis("Horizontal") , 0, Input.GetAxis("Vertical"));
 
-		// This ensures that we don't move faster going diagonally
-		if(direction.magnitude > 1f) {
+        // This ensures that we don't move faster going diagonally
+        if (direction.magnitude > 1f) {
 			direction = direction.normalized;
 		}
 
@@ -76,8 +76,8 @@ public class PlayerMovement : MonoBehaviour {
 			//
 			// Another option would be to do a raycast down and start the jump/fall animation whenever we were
 			// more than ___ distance above the ground.
-			Debug.Log(verticalVelocity);
-			Debug.Log(cc.isGrounded);
+			//Debug.Log(verticalVelocity);
+			//Debug.Log(cc.isGrounded);
 
 			if(Mathf.Abs(verticalVelocity) > jumpSpeed*0.75f) {
 				anim.SetBool("Jump", true);

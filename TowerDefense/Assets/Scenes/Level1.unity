@@ -379,6 +379,34 @@ Transform:
   m_Father: {fileID: 372011979}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &123043692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 123043693}
+  m_Layer: 0
+  m_Name: CameraReference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &123043693
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 123043692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.00171, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 516265910}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &139682053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1253,7 @@ Transform:
   - {fileID: 1664975260}
   - {fileID: 667364567}
   - {fileID: 789486250}
+  - {fileID: 123043693}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1240,13 +1269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03f44070925d490ba09ca09f29aad94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 1
-  sensitivityX: 15
-  sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
-  minimumY: -60
-  maximumY: 60
+  mouseSensitivity: 10
+  target: {fileID: 0}
+  distanceFromTarget: 100
+  pitchMinMax: {x: 0, y: 0}
+  rotationSmoothTime: 0.12
 --- !u!114 &516265912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2198,13 +2225,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789486249}
-  m_LocalRotation: {x: -0.17885187, y: 0.17343655, z: -0.032707993, w: -0.9679163}
-  m_LocalPosition: {x: 0.00045, y: 0.0023, z: -0.00081}
+  m_LocalRotation: {x: -0.2702141, y: 0.1695335, z: -0.049075775, w: -0.9464853}
+  m_LocalPosition: {x: 0.00045, y: 0.0023, z: -0.0008100001}
   m_LocalScale: {x: 0.00006250003, y: 0.0000625, z: 0.00006250004}
   m_Children: []
   m_Father: {fileID: 516265910}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.880001, y: -20.286001, z: 0.086}
 --- !u!81 &789486251
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2276,13 +2303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03f44070925d490ba09ca09f29aad94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 2
-  sensitivityX: 15
-  sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
-  minimumY: -60
-  maximumY: 60
+  mouseSensitivity: 10
+  target: {fileID: 123043693}
+  distanceFromTarget: 100
+  pitchMinMax: {x: -40, y: 85}
+  rotationSmoothTime: 0.12
 --- !u!114 &789486256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3078,7 +3103,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 525853015
+  randomSeed: -582222190
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5913,6 +5938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1130131434}
   - component: {fileID: 1130131433}
+  - component: {fileID: 1130131435}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5967,6 +5993,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1130131435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1130131432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063ca24e7fbd4bb4da7e1afadc8c892b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 516265902}
+  nexus: {fileID: 1227524747}
+  spawnPoints: []
+  enemy: {fileID: 0}
+  intro: {fileID: 1747549253321910, guid: ee769b30e3128e44a953e8a9bbdc0dc2, type: 2}
+  hud: {fileID: 1391940628324150, guid: bec5a5eddc07c80498e8c8c02afba369, type: 2}
+  defeat: {fileID: 1089609579210734, guid: e575ba089d8a03749bc9359bcef9d4b9, type: 2}
+  victory: {fileID: 1824204211681928, guid: 1017509f453a4824d9d482e3306c34b7, type: 2}
+  healthNumber: {fileID: 0}
+  waveNumber: {fileID: 0}
+  nexusNumber: {fileID: 0}
 --- !u!1 &1134120307
 GameObject:
   m_ObjectHideFlags: 0
@@ -6558,7 +6606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e039b58d218544f8cb64daac1c3c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 347269964}
 --- !u!224 &1380295392
 RectTransform:
   m_ObjectHideFlags: 0
