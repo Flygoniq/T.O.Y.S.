@@ -2178,7 +2178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1725389191
 Transform:
   m_ObjectHideFlags: 0
@@ -2224,7 +2224,7 @@ Camera:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1725389190}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -2397,7 +2397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalButtons: 3
-  yOffset: 61.5
+  yOffset: 140
 --- !u!114 &1803533143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2653,7 +2653,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2764,11 +2764,11 @@ Prefab:
         type: 3}
     - target: {fileID: 4398310053268478, guid: 917f69068ae8d194ca616e24c5e98060, type: 2}
       propertyPath: m_LocalScale.x
-      value: 8.42
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4398310053268478, guid: 917f69068ae8d194ca616e24c5e98060, type: 2}
       propertyPath: m_LocalScale.y
-      value: 8.42
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4011362142406170, guid: 917f69068ae8d194ca616e24c5e98060, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2790,6 +2790,10 @@ Prefab:
         type: 2}
       propertyPath: field of view
       value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758333252511574, guid: 917f69068ae8d194ca616e24c5e98060, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 917f69068ae8d194ca616e24c5e98060, type: 2}
