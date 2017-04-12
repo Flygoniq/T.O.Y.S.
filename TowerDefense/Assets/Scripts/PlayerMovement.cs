@@ -76,8 +76,8 @@ public class PlayerMovement : MonoBehaviour {
 			//
 			// Another option would be to do a raycast down and start the jump/fall animation whenever we were
 			// more than ___ distance above the ground.
-			//Debug.Log(verticalVelocity);
-			//Debug.Log(cc.isGrounded);
+			Debug.Log(verticalVelocity);
+			Debug.Log(cc.isGrounded);
 
 			if(Mathf.Abs(verticalVelocity) > jumpSpeed*0.75f) {
 				anim.SetBool("Jump", true);

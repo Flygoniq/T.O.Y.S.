@@ -106,6 +106,17 @@ public class GameManager1 : MonoBehaviour {
                 SceneManager.LoadScene("Menu");
             }
         }
+
+        //For testing
+        //if (Input.GetKeyDown("k"))
+        //{
+        //    GameOver();
+        //}
+        //if (Input.GetKeyDown("j"))
+        //{
+        //    Victory();
+        //}
+
     }
 
     void DisplayHUD() {
