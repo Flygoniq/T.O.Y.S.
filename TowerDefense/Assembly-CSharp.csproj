@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\Scripts\ArmyMan.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\ButtonNavigation.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\CreditsButton.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\PlayCredits.cs" />

@@ -1,10 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ArmyMan.cs">
     <Files>
-      <File FileName="Assets/Scripts/Health.cs" Line="21" Column="2" />
-      <File FileName="Assets/Scripts/EnemyHealth.cs" Line="80" Column="1" />
-      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="44" Column="1" />
+      <File FileName="Assets\Scripts\ArmyMan.cs" Line="19" Column="80" />
+      <File FileName="Assets\Scripts\GanonMenuScript.cs" Line="11" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
