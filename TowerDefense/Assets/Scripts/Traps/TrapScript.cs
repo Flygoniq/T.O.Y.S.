@@ -49,8 +49,8 @@ public class TrapScript : MonoBehaviour {
 
 	public void sell () {
 		if (currentTrap == "spike") {
-			currentTrap = "none";
 			this.gameObject.transform.GetChild (0).gameObject.SetActive (false);
 		}
+		currentTrap = "none";
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwordController : MonoBehaviour {
 
-	public float timeBetweenAttack = 0.5f;
+	public float timeBetweenAttack = 0.8f;
 	public int damage = 25;
 	public GameObject player;
 
@@ -14,32 +14,25 @@ public class SwordController : MonoBehaviour {
 
 	float range = 1000f;
 
-	Animator swordAnim;
 
 	float timer = 0;
 
 	int attackableMask;
 
 	Animator playerAnim;
-	Animator gunAnim;
 	WeaponSwitcher weaponSwitcher;
 
-	// Use this for initialization
-	void OnEnable () {
+	void Awake(){
 		attackableMask = LayerMask.GetMask ("Attackable");
-		swordAnim = GetComponent<Animator> ();
 		AudioSource[] audioSet = GetComponents<AudioSource> ();
-		audioWield = audioSet [0];
-		audioSlash = audioSet [1];
-
-		if (player) {
-			weaponSwitcher = player.GetComponent<WeaponSwitcher>();
-			playerAnim = player.GetComponent<Animator> ();
-			playerAnim.SetInteger ("WeaponType", weaponSwitcher.holding);
-		} else {
-			Debug.Log ("[SwordController] Missing player assignment!");
+		audioSlash = audioSet [0];
+		audioWield = audioSet [1];
+		if (!player) {
+			Debug.Log ("[SwordSwitcher] Please assign the player");
 		}
+		playerAnim = player.GetComponent<Animator> ();
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -53,6 +46,7 @@ public class SwordController : MonoBehaviour {
 	}
 
 	void Attack(){
+		
 		playerAnim.SetBool ("Shoot", true);
 
 		Ray wieldRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
@@ -79,7 +73,7 @@ public class SwordController : MonoBehaviour {
 
 	}
 	IEnumerator StopAttack(){
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.8f);
 		playerAnim.SetBool ("Shoot", false);
 	}
 }

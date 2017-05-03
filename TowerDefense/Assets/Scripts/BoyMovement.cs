@@ -46,10 +46,8 @@ public class BoyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		ApplyGravity ();
-		isGrounded = cc.isGrounded;
-
+		isGrounded = true;
 	}
 
 	public void Animate(float forward, float strafe){

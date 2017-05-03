@@ -6,11 +6,13 @@ public class WandController : MonoBehaviour {
 	public float lookSpeed = 5f;
 	public float lookDistance = 500f;
 	Camera mainCam;
-
-	// Use this for initialization
-	void Start () {
+	public GameObject player;
+	WeaponSwitcher weaponSwitcher;
+	Animator playerAnim;
+	void Awake(){
 		mainCam = Camera.main;
 	}
+
 
 	// Update is called once per frame
 	void Update () {
@@ -22,7 +24,7 @@ public class WandController : MonoBehaviour {
 	//Make the character look at a forward point from the camera
 	void weaponLook()
 	{
-		Debug.Log ("Wand looking at it");
+		
 		Transform mainCamT = mainCam.transform;
 		Transform pivotT = mainCam.transform;
 		Vector3 pivotPos = pivotT.position;

@@ -6,6 +6,8 @@ public class WeaponSwitcher : MonoBehaviour {
 	[Header("-Sword First,Wand Second-")]
 	public GameObject[] weapons;
 	public int holding = 0;
+	Animator playerAnim;
+
 //    public static bool swordEquipped;
 
 //	public GameObject wand;
@@ -23,11 +25,7 @@ public class WeaponSwitcher : MonoBehaviour {
 				weapons [i].SetActive (false);
 			}
 		}
-
-//		wand.SetActive(true);
-//      gunEquipped = true;
-//      sword.SetActive(false);
-//      swordEquipped = false;
+		playerAnim = GetComponent<Animator> ();
     }
 	
 	// Update is called once per frame
@@ -39,22 +37,8 @@ public class WeaponSwitcher : MonoBehaviour {
 				holding = 0;
 			}
 			ChangeWeapon ();
-//			weapons[holding].SetActive= 
+			playerAnim.SetInteger ("WeaponType", holding);
 		}
-//		if (Input.GetKeyDown("1"))
-//        {
-//			wand.SetActive(true);
-//            gunEquipped = true;
-//            sword.SetActive(false);
-//            swordEquipped = false;
-//        }
-//        if (Input.GetKeyDown("2"))
-//        {
-//			wand.SetActive(false);
-//            gunEquipped = false;
-//            sword.SetActive(true);
-//            swordEquipped = true;
-//        }
     }
 	void ChangeWeapon(){
 		for (int i=0; i < weapons.Length; i++) {
