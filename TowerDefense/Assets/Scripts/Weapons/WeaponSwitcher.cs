@@ -41,12 +41,12 @@ public class WeaponSwitcher : MonoBehaviour {
 		}
     }
 	void ChangeWeapon(){
-		for (int i=0; i < weapons.Length; i++) {
+		/*for (int i=0; i < weapons.Length; i++) {
 			if (i == holding) {
 				weapons [i].SetActive (true);
 			} else {
 				weapons [i].SetActive (false);
 			}
-		}
+		}*/
 	}
 }

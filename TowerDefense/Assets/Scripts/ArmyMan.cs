@@ -57,6 +57,7 @@ public class ArmyMan : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision other) {
+		Debug.Log (other.gameObject.name);
 		if (other.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
 			playerHealth.TakeDamage (power);
 			timer = 0;

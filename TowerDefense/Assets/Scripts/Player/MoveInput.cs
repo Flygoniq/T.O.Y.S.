@@ -52,8 +52,8 @@ public class MoveInput: MonoBehaviour
 
 		boyMove.Animate(Input.GetAxis(input.verticalAxis), Input.GetAxis(input.horizontalAxis));
 
-		if (Input.GetButtonDown(input.jumpButton))
-			boyMove.Jump();
+		//if (Input.GetButtonDown(input.jumpButton))
+		//	boyMove.Jump();
 	}
 
 	//Handles camera logic

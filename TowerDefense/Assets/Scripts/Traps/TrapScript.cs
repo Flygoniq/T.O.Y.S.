@@ -7,14 +7,16 @@ public class TrapScript : MonoBehaviour {
 
 	public string currentTrap;
 	Renderer rend;
-	Text sellText;
+	GameObject sellText;
 
 	void Awake () {
 		currentTrap = "none";
 		rend = GetComponent<Renderer> ();
 		rend.enabled = false;
-		sellText = GameObject.FindGameObjectWithTag ("SellText").GetComponent<Text>();
-		sellText.enabled = false;
+		sellText = GameObject.FindGameObjectWithTag ("SellText");
+		if (sellText != null && sellText.activeInHierarchy) {
+			sellText.SetActive (false);
+		}
 	}
 
 	void Update () {
@@ -28,7 +30,7 @@ public class TrapScript : MonoBehaviour {
 	}
 
 	public void displaySellMessage () {
-		sellText.enabled = true;
+		sellText.SetActive(true);
 	}
 
 	public void deselect () {
@@ -37,7 +39,9 @@ public class TrapScript : MonoBehaviour {
 		//removing the sell message
 		//these things may be readded within the same processing frame, but it's not a big deal.
 		rend.enabled = false;
-		sellText.enabled = false;
+		if (sellText != null && sellText.activeInHierarchy) {
+			sellText.SetActive (false);
+		}
 	}
 
 	public void construct (string trap) {

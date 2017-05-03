@@ -25,14 +25,14 @@ public class SpikeScript : MonoBehaviour {
 				transform.GetChild (0).GetComponent<SpikeDamageScript> ().gameObject.SetActive (true);
 				fallCounter = 10;
 			}
-			transform.Translate (new Vector3 (0, 2.2f, 0));
+			transform.Translate (new Vector3 (0, .3f, 0));
 			riseCounter--;
 		}
 		if (fallCounter > 0) {
 			if (fallCounter == 8) {
 				transform.GetChild (0).GetComponent<SpikeDamageScript> ().gameObject.SetActive (false);
 			}
-			transform.Translate (new Vector3 (0, -.66f, 0));
+			transform.Translate (new Vector3 (0, -.09f, 0));
 			fallCounter--;
 		}
 	}

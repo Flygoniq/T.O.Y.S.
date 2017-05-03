@@ -21,7 +21,7 @@ public class PlayerShooting : MonoBehaviour {
 
 	//trap related variables
 	public string selectedTrap;
-	int spikePrice = 200;
+	int spikePrice = 50;
 	TrapScript trapScript;
 	public Material red;
 	public Material green;
@@ -39,7 +39,7 @@ public class PlayerShooting : MonoBehaviour {
 		playerAnim = player.GetComponent<Animator> ();
 		//gunAnim = GetComponentInParent<Animator> ();
 		selectedTrap = "none";
-		money = 0;
+		money = 100;
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager1> ();
 	}
 
@@ -47,7 +47,7 @@ public class PlayerShooting : MonoBehaviour {
 	void Update () {
 		timer += Time.deltaTime;
 		//if(WeaponSwitcher.gunEquipped && Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0) {
-		if (Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0) {
+		if (selectedTrap == "none" && Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0) {
 			// Player wants to shoot...so. Shoot.
 			Fire ();
 		} else if (!Input.GetButton ("Fire1")) {
@@ -58,13 +58,17 @@ public class PlayerShooting : MonoBehaviour {
 		{
 			DisableEffects ();
 		}
+			
+		if (Input.GetKeyDown(KeyCode.Alpha1)) {
+			selectedTrap = "none";
+		} else if (Input.GetKeyDown(KeyCode.Alpha3)) {
+			selectedTrap = "spike";
+		}
 
 		//call on trap square checker.  When something that isn't a trap is selected, set selectedTrap to none.
 		if (selectedTrap != "none") {
 			SeekTrap ();
 		}
-
-
 	}
 
 	public void DisableEffects ()
@@ -138,7 +142,9 @@ public class PlayerShooting : MonoBehaviour {
 	}
 
 	void SeekTrap() {
-		trapScript.deselect ();
+		if (trapScript != null) {
+			trapScript.deselect ();
+		}
 		trapScript = null;
 
 		Ray shootRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);

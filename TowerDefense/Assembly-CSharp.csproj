@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\BoyMovement.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\ButtonNavigation.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\CreditsButton.cs" />
+     <Compile Include="Assets\Scripts\Button Scripts\ExitButton.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\PlayCredits.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\StartGameButton.cs" />
@@ -77,6 +78,7 @@
      <Compile Include="Assets\Scripts\Characters\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Characters\CharacterStats.cs" />
      <Compile Include="Assets\Scripts\Characters\FootstepSounds.cs" />
+     <Compile Include="Assets\Scripts\Credits.cs" />
      <Compile Include="Assets\Scripts\DragMe.cs" />
      <Compile Include="Assets\Scripts\DragPanel.cs" />
      <Compile Include="Assets\Scripts\DropMe.cs" />
