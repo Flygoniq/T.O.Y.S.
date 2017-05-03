@@ -11,7 +11,11 @@ public class BoyMovement : MonoBehaviour {
 	Animator anim;
 	CharacterController cc;
 
-	[System.Serializable]
+    [SerializeField]
+    public AudioSource footsteps;
+
+
+    [System.Serializable]
 	public class PhysicsSettings
 	{
 		public float gravityModifier = 9.81f;
@@ -46,6 +50,16 @@ public class BoyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(anim.GetFloat("Speed")>0 && !footsteps.isPlaying)
+        {
+            footsteps.Play();
+            footsteps.loop = true;
+        }
+        if (anim.GetFloat("Speed") == 0)
+        {
+            footsteps.Stop();
+        }
 
 		ApplyGravity ();
 		isGrounded = cc.isGrounded;

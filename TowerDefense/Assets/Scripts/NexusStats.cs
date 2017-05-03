@@ -8,6 +8,9 @@ public class NexusStats : MonoBehaviour {
     public int startHealth = 5;
     public int damage = 1;
 
+    [SerializeField]
+    public AudioSource nexusDamageAudio;
+
 	// Use this for initialization
 	void Awake () {
         nexusHealth = startHealth;
@@ -20,7 +23,7 @@ public class NexusStats : MonoBehaviour {
 
 	public void TakeDamage (int damage) {
 		nexusHealth -= damage;
-
+        nexusDamageAudio.Play();
 	}
 
 }
