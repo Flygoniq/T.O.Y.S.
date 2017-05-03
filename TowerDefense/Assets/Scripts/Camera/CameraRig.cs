@@ -6,7 +6,8 @@ public class CameraRig : MonoBehaviour
 {
     public Transform target;
     public bool autoTargetPlayer;
-    public LayerMask wallLayers;
+	public LayerMask wallLayers;
+	public float zoomValue=100f;
 
     public enum Shoulder
     {
@@ -38,6 +39,7 @@ public class CameraRig : MonoBehaviour
         [Header("-Visual Options-")]
         public float hideMeshWhenDistance = 0.5f;
     }
+
     [SerializeField]
     public CameraSettings cameraSettings;
 
@@ -46,8 +48,6 @@ public class CameraRig : MonoBehaviour
     {
         public string verticalAxis = "Mouse X";
         public string horizontalAxis = "Mouse Y";
-        public string aimButton = "Fire2";
-        public string switchShoulderButton = "Fire4";
     }
     [SerializeField]
     public InputSettings input;
@@ -66,10 +66,12 @@ public class CameraRig : MonoBehaviour
     public Camera mainCamera { get; protected set; }
     public Transform pivot { get; set; }
 
+
     // Use this for initialization
     void Start()
     {
         mainCamera = Camera.main;
+
         pivot = transform.GetChild(0);
     }
 
@@ -83,12 +85,6 @@ public class CameraRig : MonoBehaviour
                 RotateCamera();
                 CheckWall();
                 CheckMeshRenderer();
-                Zoom(Input.GetButton(input.aimButton));
-
-                if (Input.GetButtonDown(input.switchShoulderButton))
-                {
-                    SwitchShoulders();
-                }
             }
         }
     }
@@ -144,8 +140,8 @@ public class CameraRig : MonoBehaviour
         if (!pivot)
             return;
 
-        newX += cameraSettings.mouseXSensitivity * Input.GetAxis(input.verticalAxis);
-        newY += cameraSettings.mouseYSensitivity * Input.GetAxis(input.horizontalAxis);
+		newX += cameraSettings.mouseXSensitivity * Input.GetAxis(input.verticalAxis);
+		newY -= cameraSettings.mouseYSensitivity * Input.GetAxis(input.horizontalAxis);
 
         Vector3 eulerAngleAxis = new Vector3();
         eulerAngleAxis.x = newY;
@@ -164,7 +160,6 @@ public class CameraRig : MonoBehaviour
     {
         if (!pivot || !mainCamera)
             return;
-
         RaycastHit hit;
 
         Transform mainCamT = mainCamera.transform;
@@ -173,10 +168,9 @@ public class CameraRig : MonoBehaviour
 
         Vector3 start = pivotPos;
         Vector3 dir = mainCamPos - pivotPos;
+		float dist = Mathf.Abs(shoulder == Shoulder.Left ? cameraSettings.camPositionOffsetLeft.z : cameraSettings.camPositionOffsetRight.z)*zoomValue;
 
-        float dist = Mathf.Abs(shoulder == Shoulder.Left ? cameraSettings.camPositionOffsetLeft.z : cameraSettings.camPositionOffsetRight.z);
-
-        if(Physics.SphereCast(start, cameraSettings.maxCheckDist, dir, out hit, dist, wallLayers))
+		if(Physics.SphereCast(start, cameraSettings.maxCheckDist, dir, out hit, dist, wallLayers))//, wallLayers
         {
             MoveCamUp(hit, pivotPos, dir, mainCamT);
         }

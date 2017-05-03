@@ -52,9 +52,17 @@
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Procedural Mesh\ExtrudeRandomEdges.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
+     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\ArmyMan.cs" />
+     <Compile Include="Assets\Scripts\BoyMovement.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\ButtonNavigation.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\CreditsButton.cs" />
      <Compile Include="Assets\Scripts\Button Scripts\PlayCredits.cs" />
@@ -62,6 +70,8 @@
      <Compile Include="Assets\Scripts\Button Scripts\StartGameButton.cs" />
      <Compile Include="Assets\Scripts\BuzzMenuScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraRig.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraRig_.cs" />
+     <Compile Include="Assets\Scripts\Camera\ProtectCameraFromWallClip.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
      <Compile Include="Assets\Scripts\Characters\AI.cs" />
      <Compile Include="Assets\Scripts\Characters\CharacterMovement.cs" />
@@ -82,6 +92,7 @@
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\NexusStats.cs" />
      <Compile Include="Assets\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Scripts\Player\MoveInput.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerUI.cs" />
      <Compile Include="Assets\Scripts\Player\UserInput.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
@@ -91,9 +102,13 @@
      <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\Scripts\Traps\SpikeDamageScript.cs" />
+     <Compile Include="Assets\Scripts\Traps\SpikeScript.cs" />
+     <Compile Include="Assets\Scripts\Traps\TrapScript.cs" />
      <Compile Include="Assets\Scripts\Utilities\TerrainSurface.cs" />
      <Compile Include="Assets\Scripts\Weapons\PlayerShooting.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordController.cs" />
+     <Compile Include="Assets\Scripts\Weapons\WandController.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\WeaponHandler.cs" />
      <Compile Include="Assets\Scripts\Weapons\WeaponSwitcher.cs" />
@@ -138,14 +153,14 @@
  <Reference Include="ProBuilderCore-Unity5">
  <HintPath>D:/Documents/GitHub/MixedPower/TowerDefense/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
  </Reference>
- <Reference Include="pb_Stl">
- <HintPath>D:/Documents/GitHub/MixedPower/TowerDefense/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+ <Reference Include="ProBuilderMeshOps-Unity5">
+ <HintPath>D:/Documents/GitHub/MixedPower/TowerDefense/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="KDTree">
  <HintPath>D:/Documents/GitHub/MixedPower/TowerDefense/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
  </Reference>
- <Reference Include="ProBuilderMeshOps-Unity5">
- <HintPath>D:/Documents/GitHub/MixedPower/TowerDefense/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ <Reference Include="pb_Stl">
+ <HintPath>D:/Documents/GitHub/MixedPower/TowerDefense/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
  </Reference>
  <Reference Include="Triangle">
  <HintPath>D:/Documents/GitHub/MixedPower/TowerDefense/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>

@@ -22,28 +22,38 @@ public class SwordController : MonoBehaviour {
 
 	Animator playerAnim;
 	Animator gunAnim;
+	WeaponSwitcher weaponSwitcher;
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		attackableMask = LayerMask.GetMask ("Attackable");
 		swordAnim = GetComponent<Animator> ();
 		AudioSource[] audioSet = GetComponents<AudioSource> ();
 		audioWield = audioSet [0];
 		audioSlash = audioSet [1];
+
+		if (player) {
+			weaponSwitcher = player.GetComponent<WeaponSwitcher>();
+			playerAnim = player.GetComponent<Animator> ();
+			playerAnim.SetInteger ("WeaponType", weaponSwitcher.holding);
+		} else {
+			Debug.Log ("[SwordController] Missing player assignment!");
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if(WeaponSwitcher.swordEquipped && Input.GetButton("Fire1") && timer >= timeBetweenAttack && Time.timeScale != 0) {
+//		if(WeaponSwitcher.swordEquipped && Input.GetButton("Fire1") && timer >= timeBetweenAttack && Time.timeScale != 0) {
+
+		if(Input.GetButton("Fire1") && timer >= timeBetweenAttack && Time.timeScale != 0) {
 			Attack ();
 		}
 		
 	}
 
 	void Attack(){
-		print (attackableMask);
-		swordAnim.SetTrigger("Attack");
+		playerAnim.SetBool ("Shoot", true);
 
 		Ray wieldRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 		RaycastHit shootHit;
@@ -65,5 +75,11 @@ public class SwordController : MonoBehaviour {
 		{
 			audioWield.Play ();
 		}
+		StartCoroutine (StopAttack());
+
+	}
+	IEnumerator StopAttack(){
+		yield return new WaitForSeconds(0.2f);
+		playerAnim.SetBool ("Shoot", false);
 	}
 }

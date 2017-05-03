@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 	// location to other computers.
 
 	public float speed = 10f;		// The speed at which I run
-	public float jumpSpeed = 6f;	// How much power we put into our jump. Change this to jump higher.
+//	public float jumpSpeed = 6f;	// How much power we put into our jump. Change this to jump higher.
 
 	// Booking variables
 	Vector3 direction = Vector3.zero;	// forward/back & left/right
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 		// If you want double-jumping, you'll want some extra code
 		// here instead of just checking "cc.isGrounded".
 		if(cc.isGrounded && Input.GetButton("Jump")) {
-			verticalVelocity = jumpSpeed;
+//			verticalVelocity = jumpSpeed;
 		}
 	}
 
@@ -79,9 +79,9 @@ public class PlayerMovement : MonoBehaviour {
 			//Debug.Log(verticalVelocity);
 			//Debug.Log(cc.isGrounded);
 
-			if(Mathf.Abs(verticalVelocity) > jumpSpeed*0.75f) {
-				anim.SetBool("Jump", true);
-			}
+//			if(Mathf.Abs(verticalVelocity) > jumpSpeed*0.75f) {
+//				anim.SetBool("Jump", true);
+//			}
 
 			// Apply gravity.
 			verticalVelocity += Physics.gravity.y * Time.deltaTime;

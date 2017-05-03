@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//also handles trap placement and records money
 public class PlayerShooting : MonoBehaviour {
 
 	public float timeBetweenBullets = 0.3f;
 	float timer;
 	public int damage = 13;
 	public float range = 100000f;
-	int attackableMask;
+	int attackableMask, trapMask;
 	ParticleSystem gunParticles;
 	LineRenderer gunLine;
 	AudioSource gunAudio;
@@ -16,17 +17,30 @@ public class PlayerShooting : MonoBehaviour {
 	public GameObject player;
 	Animator playerAnim;
 	Animator gunAnim;
+	public int money;
 
+	//trap related variables
+	public string selectedTrap;
+	int spikePrice = 200;
+	TrapScript trapScript;
+	public Material red;
+	public Material green;
+
+	GameManager1 gameManager;
 
 	void Awake ()
 	{
 		attackableMask = LayerMask.GetMask ("Attackable");
+		trapMask = LayerMask.GetMask ("Traps");
 		gunParticles = GetComponent<ParticleSystem> ();
 		gunLine = GetComponent <LineRenderer> ();
 		gunAudio = GetComponent<AudioSource> ();
 		gunLight = GetComponent <Light> ();
 		playerAnim = player.GetComponent<Animator> ();
 		gunAnim = GetComponentInParent<Animator> ();
+		selectedTrap = "none";
+		money = 0;
+		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager1> ();
 	}
 
 	// Update is called once per frame
@@ -43,6 +57,12 @@ public class PlayerShooting : MonoBehaviour {
 			DisableEffects ();
 		}
 
+		//call on trap square checker.  When something that isn't a trap is selected, set selectedTrap to none.
+		if (selectedTrap != "none") {
+			SeekTrap ();
+		}
+
+
 	}
 
 	public void DisableEffects ()
@@ -50,7 +70,7 @@ public class PlayerShooting : MonoBehaviour {
 		gunLine.enabled = false;
 		gunLight.enabled = false;
 	}
-
+		
 	void Fire() {
 
 		playerAnim.SetTrigger ("Shoot");
@@ -118,6 +138,48 @@ public class PlayerShooting : MonoBehaviour {
 //		}
 //
 //		cooldown = fireRate;
+	}
+
+	void SeekTrap() {
+		trapScript.deselect ();
+		trapScript = null;
+
+		Ray shootRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+		RaycastHit shootHit;
+
+		if(Physics.Raycast (shootRay, out shootHit, range, trapMask)) {
+			trapScript = shootHit.collider.GetComponent<TrapScript> ();
+
+			if(trapScript != null) {
+				if (trapScript.currentTrap == "none") {
+					if (selectedTrap == "spike" && money >= spikePrice) {//add cases per trap added
+						trapScript.Light (green);
+					} else {
+						trapScript.Light (red);
+					}
+				} else if (gameManager.getState() == 3) {
+					trapScript.displaySellMessage ();
+				}
+
+				if (Input.GetButton ("Fire1")) {
+					if (trapScript.currentTrap == "none") {
+						if (selectedTrap == "spike" && money >= spikePrice) {//add cases per trap added
+							money -= spikePrice; //probably should add some call to money ui too
+							trapScript.construct("spike");
+						}
+					}
+				}
+				if (gameManager.getState() == 3 && Input.GetButton ("Sell")) {
+					//should add call to money ui
+					if (trapScript.currentTrap == "spike") {
+						money += spikePrice / 2;
+					}
+					trapScript.sell ();
+				}
+			}
+
+
+		}
 	}
 //
 //	Transform FindClosestHitObject(Ray ray, out Vector3 hitPoint) {

@@ -6,15 +6,17 @@ public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 10;
     public Transform target;
-    public float distanceFromTarget = 100;
+    public float distanceFromTarget = 1000;
     public Vector2 pitchMinMax = new Vector2(-40, 85);
 
-    public float rotationSmoothTime = .12f;
+    public float rotationSmoothTime = .15f;
     Vector3 rotationSmoothVelocity;
     Vector3 currentRotation;
 
     float yaw;
     float pitch;
+
+
 
     void LateUpdate()
     {
@@ -79,3 +81,4 @@ public class MouseLook : MonoBehaviour
 //            rb.freezeRotation = true;
 //    }
 //}
+
