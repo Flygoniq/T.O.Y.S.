@@ -32,12 +32,12 @@ public class PlayerShooting : MonoBehaviour {
 	{
 		attackableMask = LayerMask.GetMask ("Attackable");
 		trapMask = LayerMask.GetMask ("Traps");
-		gunParticles = GetComponent<ParticleSystem> ();
+		//gunParticles = GetComponent<ParticleSystem> ();
 		gunLine = GetComponent <LineRenderer> ();
 		gunAudio = GetComponent<AudioSource> ();
-		gunLight = GetComponent <Light> ();
+		//gunLight = GetComponent <Light> ();
 		playerAnim = player.GetComponent<Animator> ();
-		gunAnim = GetComponentInParent<Animator> ();
+		//gunAnim = GetComponentInParent<Animator> ();
 		selectedTrap = "none";
 		money = 0;
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager1> ();
@@ -46,11 +46,13 @@ public class PlayerShooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-
-		if(WeaponSwitcher.gunEquipped && Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0) {
+		//if(WeaponSwitcher.gunEquipped && Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0) {
+		if (Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0) {
 			// Player wants to shoot...so. Shoot.
 			Fire ();
-		}
+		} else if (!Input.GetButton ("Fire1")) {
+			playerAnim.SetBool ("Shoot", false);
+		} 
 
 		if(timer >= timeBetweenBullets * effectsDisplayTime)
 		{
@@ -68,23 +70,18 @@ public class PlayerShooting : MonoBehaviour {
 	public void DisableEffects ()
 	{
 		gunLine.enabled = false;
-		gunLight.enabled = false;
 	}
 		
 	void Fire() {
 
-		playerAnim.SetTrigger ("Shoot");
-		gunAnim.SetTrigger ("Shoot");
+		playerAnim.SetBool ("Shoot", true);
 
 
 		timer = 0f;
 
 		gunAudio.Play();
 
-		gunLight.enabled = true;
 
-		gunParticles.Stop (); //To prevent inconsistency
-		gunParticles.Play ();
 
 		gunLine.enabled = true;
 		gunLine.SetPosition (0, transform.position);
@@ -92,10 +89,10 @@ public class PlayerShooting : MonoBehaviour {
 		Ray shootRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 		RaycastHit shootHit;
 
-//		Transform hitTransform;
-//		Vector3   hitPoint;
-//
-//		hitTransform = FindClosestHitObject(shootRay, out hitPoint);
+		//		Transform hitTransform;
+		//		Vector3   hitPoint;
+		//
+		//		hitTransform = FindClosestHitObject(shootRay, out hitPoint);
 
 		if(Physics.Raycast (shootRay, out shootHit, range, attackableMask))
 		{
@@ -115,29 +112,29 @@ public class PlayerShooting : MonoBehaviour {
 			gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
 		}
 
-//		if(hitTransform != null) {
-//			Debug.Log ("We hit: " + hitTransform.name);
-//
-//			// We could do a special effect at the hit location
-//			// DoRicochetEffectAt( hitPoint );
-//
-//			Health h = hitTransform.GetComponent<Health>();
-//
-//			while(h == null && hitTransform.parent) {
-//				hitTransform = hitTransform.parent;
-//				h = hitTransform.GetComponent<Health>();
-//			}
-//
-//			// Once we reach here, hitTransform may not be the hitTransform we started with!
-//
-//			if(h != null) {
-//				h.TakeDamage( damage );
-//			}
-//
-//
-//		}
-//
-//		cooldown = fireRate;
+		//		if(hitTransform != null) {
+		//			Debug.Log ("We hit: " + hitTransform.name);
+		//
+		//			// We could do a special effect at the hit location
+		//			// DoRicochetEffectAt( hitPoint );
+		//
+		//			Health h = hitTransform.GetComponent<Health>();
+		//
+		//			while(h == null && hitTransform.parent) {
+		//				hitTransform = hitTransform.parent;
+		//				h = hitTransform.GetComponent<Health>();
+		//			}
+		//
+		//			// Once we reach here, hitTransform may not be the hitTransform we started with!
+		//
+		//			if(h != null) {
+		//				h.TakeDamage( damage );
+		//			}
+		//
+		//
+		//		}
+		//
+		//		cooldown = fireRate;
 	}
 
 	void SeekTrap() {
