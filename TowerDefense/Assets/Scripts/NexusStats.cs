@@ -5,11 +5,11 @@ using UnityEngine;
 public class NexusStats : MonoBehaviour {
 
     public static int nexusHealth;
-    public int startHealth = 20;
+    public int startHealth = 5;
     public int damage = 1;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         nexusHealth = startHealth;
 	}
 	
@@ -18,12 +18,9 @@ public class NexusStats : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "enemy")
-        {
-            nexusHealth -= damage;
-        }
-        
-    }
+	public void TakeDamage (int damage) {
+		nexusHealth -= damage;
+
+	}
 
 }

@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour {
     private void OnEnable()
     {
         //numberWavesSurvived.text = _insertWaveNumberHere_
-        numberWavesSurvivedText.text = GameManager1.wave.ToString(); //Example, except we should change the variable to the wave number
+        numberWavesSurvivedText.text = NexusStats.nexusHealth.ToString(); //Example, except we should change the variable to the wave number
     }
 
     public void Retry()

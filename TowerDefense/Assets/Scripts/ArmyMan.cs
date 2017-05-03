@@ -12,12 +12,15 @@ public class ArmyMan : MonoBehaviour {
 	float timer;
 
 	Transform player;
-	public Transform goal;
+	PlayerHealth playerHealth;
+	NexusStats nexusStats;
+	Transform goal;
 
-	public int maxHP;
-	public float aggrodist; //distance at which enemy targets players instead
-	public float leashdist; //distance at which enemy returns to default behaviour
-	public int power = 1;
+	public int maxHP = 100;
+	public float aggrodist = 150; //distance at which enemy targets players instead
+	public float leashdist = 200; //distance at which enemy returns to default behaviour
+	public int power = 10;
+	public int nexusAttack = 1;
 	public float timeBetweenAttacks = 1.5f;
 
 	// Use this for initialization
@@ -28,7 +31,10 @@ public class ArmyMan : MonoBehaviour {
 		state = "default";
 		HP = maxHP;
 		timer = 0;
-		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform>();
+		playerHealth = GameObject.FindGameObjectWithTag ("Player").GetComponent <PlayerHealth> ();
+		goal = GameObject.FindGameObjectWithTag ("Nexus").GetComponent<Transform>();
+		nexusStats = GameObject.FindGameObjectWithTag ("Nexus").GetComponent<NexusStats> ();
 		agent.destination = goal.position;
 	}
 	
@@ -39,18 +45,43 @@ public class ArmyMan : MonoBehaviour {
 			state = "aggressive";
 		} else if (dist >= leashdist) {
 			state = "default";
+			agent.destination = goal.position;
 		}
 		if (state == "aggressive") {
 			agent.destination = player.position;
+		} else {
+			agent.destination = goal.position;
 		}
 		timer += Time.deltaTime;
 
 	}
 
-	void OnCollisionEnter (Collider other) {
+	void OnCollisionEnter (Collision other) {
 		if (other.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
-			//!!! insert attack here
+			playerHealth.TakeDamage (power);
 			timer = 0;
+		}
+		if (other.gameObject.tag == "Nexus") {
+			nexusStats.TakeDamage (nexusAttack);
+			Destroy (gameObject);
+		}
+	}
+
+	void OnCollisionStay (Collision other) {
+		if (other.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
+			playerHealth.TakeDamage (power);
+			timer = 0;
+		}
+		if (other.gameObject.tag == "Nexus") {
+			nexusStats.TakeDamage (nexusAttack);
+			Destroy (gameObject);
+		}
+	}
+
+	public void TakeDamage (int damage) {
+		HP -= damage;
+		if (HP <= 0) {
+			Destroy (gameObject);
 		}
 	}
 }

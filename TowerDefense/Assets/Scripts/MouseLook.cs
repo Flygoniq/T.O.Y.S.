@@ -25,7 +25,9 @@ public class MouseLook : MonoBehaviour
         currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
         transform.eulerAngles = currentRotation;
 
-        transform.position = target.position - transform.forward * distanceFromTarget;
+		if (target != null) {
+			transform.position = target.position - transform.forward * distanceFromTarget;
+		}
     }
 }
 

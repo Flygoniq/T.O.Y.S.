@@ -3,9 +3,9 @@ using System.Collections;
 
 public class PlayerShooting : MonoBehaviour {
 
-	public float timeBetweenBullets = 0.15f;
+	public float timeBetweenBullets = 0.3f;
 	float timer;
-	public int damage = 25;
+	public int damage = 13;
 	public float range = 100000f;
 	int attackableMask;
 	ParticleSystem gunParticles;
@@ -52,8 +52,6 @@ public class PlayerShooting : MonoBehaviour {
 	}
 
 	void Fire() {
-		
-		Debug.Log ("Firing our gun!");
 
 		playerAnim.SetTrigger ("Shoot");
 		gunAnim.SetTrigger ("Shoot");
@@ -69,7 +67,7 @@ public class PlayerShooting : MonoBehaviour {
 		gunParticles.Play ();
 
 		gunLine.enabled = true;
-		gunLine.SetPosition (0, transform.position);  
+		gunLine.SetPosition (0, transform.position);
 
 		Ray shootRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 		RaycastHit shootHit;
@@ -82,18 +80,18 @@ public class PlayerShooting : MonoBehaviour {
 		if(Physics.Raycast (shootRay, out shootHit, range, attackableMask))
 		{
 			Debug.Log ("We hit: " + shootHit.collider.name);
+			ArmyMan armyMan = shootHit.collider.GetComponent<ArmyMan> ();
 
-			EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> (); //The component, existing or not, will return value, the value there or null.
-
-			if(enemyHealth != null)
+			if(armyMan != null)
 			{
-				enemyHealth.TakeDamage (damage, shootHit.point, shootRay.direction);
+				armyMan.TakeDamage (damage);
 			}
 
 			gunLine.SetPosition (1, shootHit.point);
 		}
 		else
 		{
+			Debug.Log ("no hit");
 			gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
 		}
 
