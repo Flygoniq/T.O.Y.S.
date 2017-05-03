@@ -17,6 +17,9 @@ public class PlayerHealth : MonoBehaviour
     bool isDead;
     //bool damaged;
 
+    [SerializeField]
+    public AudioSource playerTakeDamageAudio;
+
 
     void Awake ()
     {
@@ -47,12 +50,13 @@ public class PlayerHealth : MonoBehaviour
         //damaged = true;
 
         currentHealth -= amount;
+        playerTakeDamageAudio.Play();
 
         //healthSlider.value = currentHealth;
 
         //playerAudio.Play ();
 
-        if(currentHealth <= 0 && !isDead)
+        if (currentHealth <= 0 && !isDead)
         {
             Death ();
         }
