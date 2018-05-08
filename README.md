@@ -2,6 +2,7 @@
 
 Team MixedPower
 Final Video Game Project for CS4455/CS6457
+Originally stored on Georgia Tech Github Enterprise
 
 ### Potential Names
 Toy Story  
